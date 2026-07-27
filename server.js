@@ -19,11 +19,9 @@ if (!connectionString) {
 }
 
 const pool = new Pool({
-  connectionString,
-  ssl: connectionString && !connectionString.includes('localhost')
-    ? { rejectUnauthorized: false }
-    : false
-});
+     connectionString,
+     ssl: false
+   });
 
 async function initDb() {
   await pool.query(`
